@@ -13,12 +13,15 @@ namespace BulkyBook.Models
         [Key]
         public int Id { get; set; }
         [Required]
+        [MaxLength(40)]
         public string Title { get; set; }
         [Required]
+        [MaxLength(200)]
         public string Description { get; set; }
         [Required]
         public string ISBN { get; set; }
         [Required]
+        [MaxLength(30)]
         public string Author { get; set; }
 
         [Required]
