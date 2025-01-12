@@ -1,5 +1,5 @@
-﻿using Bulky.DataAccess.Data;
-using Bulky.Models;
+﻿using BulkyBookBook.DataAccess.Data;
+using BulkyBookBook.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bulky.DataAccess.Repository.IRepository
+namespace BulkyBookBook.DataAccess.Repository.IRepository
 {
     public class CategoryRepository : Repository<Category>, ICategoryRepository
     {
