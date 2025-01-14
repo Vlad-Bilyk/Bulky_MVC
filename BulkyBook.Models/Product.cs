@@ -18,7 +18,7 @@ namespace BulkyBook.Models
         [MaxLength(40)]
         public string Title { get; set; }
         [Required]
-        [MaxLength(200)]
+        [MaxLength(500)]
         public string Description { get; set; }
         [Required]
         public string ISBN { get; set; }
