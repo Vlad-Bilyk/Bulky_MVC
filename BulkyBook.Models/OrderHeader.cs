@@ -29,7 +29,7 @@ namespace BulkyBook.Models
         public DateTime PaymentDate { get; set; }
         public DateOnly PaymentDuedate { get; set; }
 
-        public string PaymnetIntentId { get; set; }
+        public string? PaymnetIntentId { get; set; }
 
         [Required]
         public string PhoneNumber { get; set; }
