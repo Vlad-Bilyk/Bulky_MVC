@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using BulkyBook.Utility;
 using Stripe;
+using Microsoft.AspNetCore.Authentication;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +31,12 @@ builder.Services.AddSession(options =>
     options.IdleTimeout = TimeSpan.FromMinutes(100);
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
+});
+
+builder.Services.AddAuthentication().AddFacebook(option =>
+{
+    option.AppId = "529957896104462";
+    option.AppSecret = "18a6febd2b839fc4fc4f01af68dff76f";
 });
 
 builder.Services.AddRazorPages();
