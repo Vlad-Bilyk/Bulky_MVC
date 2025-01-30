@@ -48,7 +48,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
             else
             {
                 //update
-                productVM.Product = _unitOfWork.Product.Get(u => u.Id == id);
+                productVM.Product = _unitOfWork.Product.Get(u => u.Id == id, includeProperties:"ProductImages");
                 return View(productVM);
             }
         }
@@ -56,8 +56,6 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Upsert(ProductVM productVM, List<IFormFile> files)
         {
-
-
             if (ModelState.IsValid)
             {
                 if (productVM.Product.Id == 0)
@@ -86,7 +84,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
                             Directory.CreateDirectory(finalPath);
                         }
 
-                        using (var fileStream = new FileStream(Path.Combine(productPath, fileName), FileMode.Create))
+                        using (var fileStream = new FileStream(Path.Combine(finalPath, fileName), FileMode.Create))
                         {
                             file.CopyTo(fileStream);
                         }
