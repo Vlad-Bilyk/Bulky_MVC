@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using BulkyBook.Utility;
 using Stripe;
-using Microsoft.AspNetCore.Authentication;
 using BulkyBook.DataAccess.DBInitializer;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -39,6 +38,12 @@ builder.Services.AddAuthentication().AddFacebook(option =>
     option.AppId = "636896272328330";
     option.AppSecret = "a05c61014e5b2b44dd667bac6c171210";
 });
+
+builder.Services.AddAuthentication().AddMicrosoftAccount(option => {
+    option.ClientId = "2e749572-91d1-4c85-9ba5-04ae30ac13b8";
+    option.ClientSecret = builder.Configuration.GetSection("MicrosoftLogIn:SecretKey").Get<string>();
+});
+
 
 builder.Services.AddRazorPages();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
