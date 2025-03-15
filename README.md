@@ -9,7 +9,7 @@ and an admin panel for managing users and orders.
 [certificate](https://ude.my/UC-05252146-16c4-4c5a-8274-f919ba42e4ba)
 
 ## 🚀 Live demo
-[BulkyMVC - Live on Azure](https://bulkymvc-vladbilyk-bfgdeyfthkacdugn.polandcentral-01.azurewebsites.net)
+[BulkyMVC - Live on Azure](https://bulkymvc-vladbilyk-bfgdeyfthkacdugn.polandcentral-01.azurewebsites.net) - більше не доступно
 
 
 
